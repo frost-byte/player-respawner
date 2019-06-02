@@ -1,0 +1,18 @@
+# -----------------------------------------------------
+# The list of worlds to check, when the player logs in.
+# If a player logs in, and is in one of the list worlds
+# Then they will be teleported to the spawn of the
+# destination world
+# -----------------------------------------------------
+worlds:
+  - "world_nether"
+  - "world_the_end"
+# -----------------------------------------------------
+# The destination world
+# -----------------------------------------------------
+destination: "world"
+
+# -----------------------------------------------------
+# Is the plugin activated?
+# -----------------------------------------------------
+active: true

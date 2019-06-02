@@ -1,0 +1,8 @@
+name: PlayerRespawnerPlugin
+description: ${project.description}
+website: ${project.url}
+
+author: frost-byte
+version: ${project.version}
+api-version: 1.14
+main: net.frostbyte.playerrespawner.Main

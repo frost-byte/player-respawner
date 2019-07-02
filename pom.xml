@@ -17,18 +17,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <acf.version>0.5.0-SNAPSHOT</acf.version>
     <guice.version>4.2.0</guice.version>
+    <lombok.version>1.16.20</lombok.version>
+    <spigot.version>1.14.3-SNAPSHOT</spigot.version>
   </properties>
 
   <repositories>
-    <!-- Spigot -->
+    <!-- frost-byte -->
     <repository>
-      <id>spigot-repo</id>
-      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-    </repository>
-    <!-- Aikar -->
-    <repository>
-      <id>aikar</id>
-      <url>https://repo.aikar.co/content/groups/aikar/</url>
+      <id>frost-byte</id>
+      <url>https://frost-byte.net/nexus/repository/maven-public/</url>
     </repository>
   </repositories>
 
@@ -38,7 +35,7 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.14.2-R0.1-SNAPSHOT</version>
+      <version>${spigot.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -66,7 +63,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.20</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -186,6 +183,33 @@
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
+      <!-- maven-deploy-plugin -->
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+        <executions>
+          <execution>
+            <id>default-deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <downloadUrl>https://frost-byte.net/nexus/repository/maven-public/</downloadUrl>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>frost-byte Snapshots</name>
+      <url>https://frost-byte.net/nexus/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <name>frost-byte Releases</name>
+      <url>https://frost-byte.net/nexus/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
 </project>

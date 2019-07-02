@@ -2,6 +2,7 @@ package net.frostbyte.playerrespawner;
 
 import co.aikar.commands.BukkitCommandManager;
 import com.google.inject.Injector;
+
 import net.frostbyte.playerrespawner.commands.PluginCommand;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
@@ -213,6 +214,7 @@ public class Main extends JavaPlugin implements Listener
 		return false;
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	public void readConfig(boolean doReload) {
 		if (doReload)
 			reloadConfig();
